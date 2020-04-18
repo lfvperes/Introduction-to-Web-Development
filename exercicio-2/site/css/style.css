@@ -1,0 +1,127 @@
+/*
+	SCC0219 - Exercise 2
+	Nome: LUÍS FILIPE VASCONCELOS PERES
+	Nro USP: 10310641
+----------------------------------------
+*/
+*{										/*reset*/
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: "Muli", sans-serif;
+	background-color: #D2D2D2;
+	color: #828282;
+	font-size: 100%;
+}
+
+p{
+	font-size: 0.9em;
+}
+
+h2{
+	font-family: "Merriweather Sans", sans-serif;
+	color: coral;
+}
+
+span{
+	color: coral;
+	font-size: 0.84em;
+}
+
+p, h4, h3, h2, #img-profile{
+	margin: 0.3em;
+}
+
+.container{
+	width: 50%;
+	margin: auto;
+}
+
+.card{
+	background-color: #fff;
+	margin: 1.2em;
+	padding: 0.6em;
+}
+
+.text-center{
+	text-align: center;
+}
+
+a.button{
+	background-color: coral;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	padding: 0.6em 0.9em;
+	margin: 0.6em;
+}
+
+ul.list-inline{
+	list-style: none;
+}
+
+.list-inline li, .text-center li{
+	display: inline-block;
+	margin: 1.2em 1.5em;
+	border-bottom: 0.06em dashed #b2b2b2;
+}
+
+.list-inline a{
+	color: #828282;
+	text-decoration: none;
+	font-size: 0.96em;
+	font-weight: 500;
+	font-variant: small-caps;
+}
+
+.img-circle{
+	border-radius: 50%;
+}
+
+#img-profile{
+	width:9.5em;
+	padding:0.18em;
+	border: 0.06em dashed #b2b2b2;
+}
+
+.fa{
+	font-size: 2.2em;
+	padding-bottom: 0.36em;
+}
+
+/*
+as ids foram criadas para que as palavras 
+fossem coloridas junto com os ícones
+quando o mouse passasse pelo link
+*/
+
+#facebook:hover{
+	color: #3b5998;
+}
+
+#linkedin:hover{
+	color: #0e76a8;
+}
+
+#twitter:hover{
+	color: #00acee;
+}
+
+#github:hover{
+	color: #333;
+}
+
+#movies tr, #movies td{
+	padding: 0.3em;
+}
+
+#movies img{			/* eu queria colocar essa largura como '%' mas não */
+	width: 8.4em;		/* consegui, e não queria usar 'px'. deu certo com */
+}						/* 'em' mas não entendi o que aconteceu com a '%'  */
+
+#movies h4{
+	padding-bottom: 0.6em;
+}

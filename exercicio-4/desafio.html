@@ -1,0 +1,107 @@
+<!---
+SCC0219 - Exercise 4, challenge
+Nome: LUIS FILIPE VASCONCELOS PERES
+NroUSP: 10310641
+--->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:600&display=swap" rel="stylesheet">
+    <style type="text/css">
+        @font-face {
+            font-family: 'digital-7regular';
+            src: url('digital-7.regular-webfont.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+
+        }
+        body{
+            font-family: 'Orbitron', sans-serif;
+            color: white;
+        }
+        div{
+            padding: 4px;
+            width: 242px;
+            border-radius: 10px;
+            background-color: #FEAED9;
+        }
+        table{
+            background-color: white;
+            padding: 18px 4px 12px 4px;
+            border-collapse: separate;
+            border-spacing: 4px;
+            border-radius: 8px;
+        }
+        td{
+            width: 40px;
+            height: 40px;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .small{
+            font-size: 20px;
+        }
+        #display{
+            font-family: 'digital-7regular', sans-serif;
+            background-color: #81C8FA;
+            border: 4px solid #5792CF;
+            padding: 0 4px;
+            text-align: right;
+            font-size: 32px;
+            letter-spacing: 4px;
+        }
+        
+
+        button{
+            width: 40px;
+            height: 40px;
+            border: inherit;
+            border-radius: 4px;
+            background-color: #FEAED9;
+            font: inherit;
+            color: inherit;
+        }
+        td button#igual, td #C{
+            background-color: #5792CF;
+        }
+        
+        
+    </style>
+</head>
+<body>
+    <div>
+        <table>
+            <tr>
+                <td id="display" colspan="5">display</td>
+            </tr>
+            <tr></tr>
+            <tr>
+                <td><button>7</button></td>
+                <td><button>8</button></td>
+                <td><button>9</button></td>
+                <td class="small"><button class="operator">+</button></td>
+                <td><button id="C">C</button></td>
+            </tr><tr>
+                <td><button>4</button></td>
+                <td><button>5</button></td>
+                <td><button>6</button></td>
+                <td class="small"><button class="operator">-</button></td>
+                <td><button>CE</button></td>
+            </tr><tr>
+                <td><button>1</button></td>
+                <td><button>2</button></td>
+                <td><button>3</button></td>
+                <td><button class="operator">x</button></td>
+                <td class="small" rowspan="2"><button id="igual">=</button></td>
+            </tr><tr>
+                <td colspan="2"><button>0</button></td>
+                <td class="small"><button id="dot">.</button></td>
+                <td><button class="operator">/</button></td>
+            </tr>
+        </table>
+    </div>
+    
+    <script type="text/javascript" src="js/desafio.js"></script>
+</body>
+</html>
