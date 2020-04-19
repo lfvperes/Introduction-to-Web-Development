@@ -9,7 +9,7 @@ var botao = window.document.getElementById("lib-button");
 botao.addEventListener("click", makeMadTalk);   // item a)
 
 function makeMadTalk(){                         // item b)
-    
+                                                // pegando cada input
     var noun = window.document.querySelector("input#noun").value;
     var adjec = window.document.querySelector("input#adjective").value;
     var person = window.document.querySelector("input#person").value;
@@ -19,7 +19,7 @@ function makeMadTalk(){                         // item b)
     var adjec = window.document.getElementById("adjective").value;
     var person = window.document.getElementById("person").value;
     */
-
+                                                // saida
     phrase.innerText = `Did you know that ${person} has a huge ${adjec} ${noun} tattoo?`;
 
 }
