@@ -19,12 +19,12 @@ for (var caixa of caixas){
     cor.addEventListener("mouseout", nenhumaCor);
 }
 
-function nomeCor(){
+function nomeCor(){     // quando o cursor está sobre alguma caixa
     var selection = window.document.querySelector(".selected");
-    selection.innerText = event.target.className;
+    selection.innerText = event.target.className + "!";
 }
 
-function nenhumaCor(){
+function nenhumaCor(){  // quando o cursor não está sobre nenhuma caixa
     var selection = window.document.querySelector(".selected");
     selection.innerText = "None!";
 }
@@ -35,9 +35,10 @@ var novaCaixa = window.document.createElement("div");
 novaCaixa.setAttribute("class", "random");
 secao.appendChild(novaCaixa);
 
-var random
-random = window.document.querySelector(".random");
-random.innerText = "Clique aqui!";
+var random = window.document.querySelector(".random");
+random.style = "text-align:center;"+
+"vertical-align:top;";
+random.innerText = "Click me!";
 random.addEventListener("click", mudaCor);
 
 function mudaCor(){
@@ -45,8 +46,8 @@ function mudaCor(){
     var g = Math.floor(Math.random() * 256);    // entre 0 e 255
     var b = Math.floor(Math.random() * 256);
 
-    random.style.background = `rgb(${r}, ${g}, ${b})`;              // cor aleatória
-    random.style.color = `rgb(${255 - r},${255 - g},${255 - b})`;   // cor negativa
+    random.style.background = `rgb(${r}, ${g}, ${b})`;              // cor aleatória no fundo
+    random.style.color = `rgb(${255 - r},${255 - g},${255 - b})`;   // cor "complementar" no texto
 
     console.log(r,g,b)
 }
