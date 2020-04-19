@@ -14,21 +14,46 @@ NroUSP: 10310641
             src: url('digital-7.regular-webfont.woff') format('woff');
             font-weight: normal;
             font-style: normal;
-
+        }
+        *{
+            margin: 0;
+            padding: 0;
         }
         body{
             font-family: 'Orbitron', sans-serif;
-            color: white;
+            color: #e1dfb6;
+            background-image: url("shrek.png");
+            background-size: 445px 483px;
+            background-repeat: no-repeat;
+            background-color: #e1dfb6;
         }
-        div{
-            padding: 4px;
-            width: 242px;
-            border-radius: 10px;
-            background-color: #FEAED9;
+        #container{
+            width: 415px;
+            height: 400px;
+            padding: 110px 8px;
+            text-align: center;
+        }
+        #tela{
+            width: 200px;
+            height: 40px;
+            background-color: #c5ee7d;
+            border: 4px solid #7a9244;
+            border-radius: 8px;
+            padding: 0 4px;
+            margin: 8px 0 16px 0;
+            display: inline-block;
+            font: 32px 'digital-7regular', sans-serif;
+            color: #5c452d;
+            letter-spacing: 4px;
+            position: relative;
+        }
+        #conteudo{
+            position: absolute;
+            bottom: 0;
+            right: 0;
         }
         table{
-            background-color: white;
-            padding: 18px 4px 12px 4px;
+            display: inline-block;
             border-collapse: separate;
             border-spacing: 4px;
             border-radius: 8px;
@@ -37,69 +62,58 @@ NroUSP: 10310641
             width: 40px;
             height: 40px;
             border-radius: 5px;
-            text-align: center;
         }
-        .small{
-            font-size: 20px;
-        }
-        #display{
-            font-family: 'digital-7regular', sans-serif;
-            background-color: #81C8FA;
-            border: 4px solid #5792CF;
-            padding: 0 4px;
-            text-align: right;
-            font-size: 32px;
-            letter-spacing: 4px;
-        }
-        
-
         button{
-            width: 40px;
-            height: 40px;
-            border: inherit;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #e1dfb6;
             border-radius: 4px;
-            background-color: #FEAED9;
+            background-color: #7a9244;
             font: inherit;
+            font-size: 115%;
             color: inherit;
         }
-        td button#igual, td #C{
-            background-color: #5792CF;
+        #igual, #C{
+            background-color: #5c452d;
         }
-        
+        .small{
+            font-size: 135%;
+        }
         
     </style>
 </head>
 <body>
-    <div>
-        <table>
-            <tr>
-                <td id="display" colspan="5">display</td>
-            </tr>
-            <tr></tr>
-            <tr>
-                <td><button>7</button></td>
-                <td><button>8</button></td>
-                <td><button>9</button></td>
-                <td class="small"><button class="operator">+</button></td>
-                <td><button id="C">C</button></td>
-            </tr><tr>
-                <td><button>4</button></td>
-                <td><button>5</button></td>
-                <td><button>6</button></td>
-                <td class="small"><button class="operator">-</button></td>
-                <td><button>CE</button></td>
-            </tr><tr>
-                <td><button>1</button></td>
-                <td><button>2</button></td>
-                <td><button>3</button></td>
-                <td><button class="operator">x</button></td>
-                <td class="small" rowspan="2"><button id="igual">=</button></td>
-            </tr><tr>
-                <td colspan="2"><button>0</button></td>
-                <td class="small"><button id="dot">.</button></td>
-                <td><button class="operator">/</button></td>
-            </tr>
-        </table>
+    <div id="container">
+        <div id="tela">
+            <span id="conteudo">shrek</span>
+        </div>
+        <div class="tabela">
+            <table>
+                <tr>
+                    <td><button class="numero">7</button></td>
+                    <td><button class="numero">8</button></td>
+                    <td><button class="numero">9</button></td>
+                    <td class="small"><button class="operator">+</button></td>
+                    <td><button class="C">C</button></td>
+                </tr><tr>
+                    <td><button class="numero">4</button></td>
+                    <td><button class="numero">5</button></td>
+                    <td><button class="numero">6</button></td>
+                    <td class="small"><button class="operator">-</button></td>
+                    <td><button class="CE">CE</button></td>
+                </tr><tr>
+                    <td><button class="numero">1</button></td>
+                    <td><button class="numero">2</button></td>
+                    <td><button class="numero">3</button></td>
+                    <td><button class="operator">x</button></td>
+                    <td class="small" rowspan="2"><button class="igual">=</button></td>
+                </tr><tr>
+                    <td colspan="2"><button>0</button></td>
+                    <td class="small"><button class="dot">.</button></td>
+                    <td><button class="operator">/</button></td>
+                </tr>
+            </table>
+        </div>
     </div>
     
     <script type="text/javascript" src="js/desafio.js"></script>
