@@ -48,6 +48,4 @@ function mudaCor(){
 
     random.style.background = `rgb(${r}, ${g}, ${b})`;              // cor aleatória no fundo
     random.style.color = `rgb(${255 - r},${255 - g},${255 - b})`;   // cor "complementar" no texto
-
-    console.log(r,g,b)
 }
