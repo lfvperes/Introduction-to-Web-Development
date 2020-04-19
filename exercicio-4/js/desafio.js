@@ -9,10 +9,9 @@ var tela = window.document.querySelector("#conteudo");
 var conteudo = "0";
 var anterior = "";
 
-for (let botao of botoes){
-    botao.addEventListener("click", computar);
-}
+for (let botao of botoes){botao.addEventListener("click", computar);}
 
+// bug não completamente resolvido: trabalhar com números que não cabem na tela
 function computar(){
     let botao = event.target;
     let entrada = botao.innerText;
@@ -25,9 +24,10 @@ function computar(){
             if(anterior.className == "operator"){
                 conteudo = conteudo.slice(0, conteudo.length-1);
             }
-            // o botão é "x" por estética, mas a operação precisa ser "*"
+            // o botão é "x" por estética, mas a operação precisa ser "*":
             conteudo = conteudo.replace(/x/g, "*");
-            conteudo = String(eval(conteudo));      // realizar o cáclulo
+            // realizar o cálculo e arredondar para caber na tela:
+            conteudo = String(Math.round(eval(conteudo)*1e6)/1e6);
             ultimoOperador = 0;
             break;
         case "operator":
@@ -36,7 +36,9 @@ function computar(){
             // ex: "3+-" vira "3-"
             if(anterior.className == "operator"){
                 conteudo = conteudo.slice(0, conteudo.length-1).concat(entrada);
-            }else{conteudo = conteudo.concat(entrada);}
+            }else{
+                conteudo = conteudo.concat(entrada);
+            }
             break;
         case "dot":
             // evitar que o resultado de uma operação seja concatenado com um ponto
@@ -45,6 +47,7 @@ function computar(){
                 conteudo = "0";
             }
             // evitar que o número tenha mais de um ponto
+            // permtir que a expressão tenha vários pontos
             for (operador of "+-x/"){
                 ultimoOperador = Math.max(ultimoOperador, conteudo.lastIndexOf(operador));
             }
@@ -53,18 +56,20 @@ function computar(){
                 conteudo = conteudo.concat(entrada);
             }
             break;
-        case "C":
+        case "C":   // clear all: sempre limpa a tela
             conteudo = "0";
             break;
-        case "CE":
+        case "CE":  // clear entry:
+            // se o último comando for =, não limpa a tela
             if(conteudo != "0" && anterior.innerText != "="){
                 conteudo = conteudo.slice(0, conteudo.length-1);
             }
-            if(conteudo == ""){
+            if(conteudo == ""){ // se a tela já estiver "limpa"
                 conteudo = "0";
             }
             break;
-        default:
+        default:            // class="numero"
+            //if(conteudo.length > 8){break;}     // evitar números maiores que a tela
             if(conteudo == "0" && entrada != "."||anterior.innerText == "="){
                 conteudo = "";
             }
@@ -78,5 +83,7 @@ function computar(){
 }
 
 function display(){
-    tela.innerText = conteudo;
+    // não mostrar dígitos fora da tela:
+    let mostrar = conteudo.slice(Math.max(0, conteudo.length-9));
+    tela.innerText = mostrar;
 }
