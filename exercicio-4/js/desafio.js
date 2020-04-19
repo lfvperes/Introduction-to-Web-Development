@@ -1,5 +1,5 @@
 /*
-SCC0219 - Exercise 4, part 2
+SCC0219 - Exercise 4, desafio
 Nome: LUIS FILIPE VASCONCELOS PERES
 NroUSP: 10310641
 */
