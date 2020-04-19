@@ -1,31 +1,23 @@
-let caixa = window.document.querySelector(".caixa");
-let botao = window.document.querySelector("#change");
-let cores;
-var lista = [];
+var caixa = window.document.querySelector(".caixa");
+var botao = window.document.querySelector("#change");
+var hex = window.document.querySelector("#hex");
+var nome = window.document.querySelector("#nome");
+var cores;
+var corAtual;
 
 // listar as cores uma só vez
-var a = fetch("https://reqres.in/api/unknown")
-.then(function(response){
-    return response.json();
+fetch("https://reqres.in/api/unknown")
+.then(response => response.json())
+.then(success => {
+    cores = success.data;
 })
-.then(function(response){
-    var saida = response.data.map(function(cor){
-        return cor.name;
-    });
-    console.log(saida);
-    cores = saida;
-    return saida;
-})
+.then(() => {botao.addEventListener("click", mudarCor)})
 
-
-console.log(a);
-for (i in a){
-    console.log(i);
-}
-console.log(cores);
-
-botao.addEventListener("click", mudarCor);
 
 function mudarCor(){
-    
+    corAtual = Math.floor(Math.random() * cores.length);
+    console.log(cores[corAtual].name, cores[corAtual].color);
+    nome.innerText = cores[corAtual].name;
+    hex.innerText = cores[corAtual].color;
+    caixa.style.backgroundColor = cores[corAtual].color;
 }

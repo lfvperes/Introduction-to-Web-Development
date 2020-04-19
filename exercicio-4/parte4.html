@@ -3,30 +3,38 @@
 <head>
     <title></title>
     <style type="text/css">
-        div{
+        body{
+            font-family: "Trebuchet MS", sans-serif;
             width: 150px;
-            height: 150px;
+            padding: 10px 50px;
         }
         .caixa{
-            padding: 25px;
-            font-family: Arial, sans-serif;
+            height: 140px;
+            padding: 5px 25px;
             color: white;
             background-color: black;
             text-align: right;
         }
-        .botao{
-            margin: 25px;
+        .container_botao{
             text-align: center;
+            margin-top: 5px;
         }
         button{
-            background-color: #ddd;
+            background-color: #ccc;
             text-transform: uppercase;
+            padding: 5px 10px;
+            font-size: 80%;
+            font-family: inherit;
+            border-radius: 12px;
+            border: 2px solid black;
         }
     </style>
 </head>
 <body>
-    <div class="caixa"><span id="hex">#000</span><br/><span id="nome">black</span></div>
-    <div class="botao">
+    <div class="caixa">
+        <span id="hex">#000</span><br/><span id="nome">black</span>
+    </div>
+    <div class="container_botao">
         <button id="change">change color</button>
     </div>
     
