@@ -16,6 +16,7 @@ for (let botao of botoes){
 function computar(){
     let botao = event.target;
     let entrada = botao.innerText;
+    let ultimoOperador = 0;
     
     switch(botao.className){
         case "igual":
@@ -26,8 +27,8 @@ function computar(){
             }
             // o botão é "x" por estética, mas a operação precisa ser "*"
             conteudo = conteudo.replace(/x/g, "*");
-            // realizar o cáclulo
-            conteudo = String(eval(conteudo));
+            conteudo = String(eval(conteudo));      // realizar o cáclulo
+            ultimoOperador = 0;
             break;
         case "operator":
             // se um operador for digitado após outro, ele o substitui
@@ -39,11 +40,16 @@ function computar(){
             break;
         case "dot":
             // evitar que o resultado de uma operação seja concatenado com um ponto
+            // começa uma nova expressão
             if(anterior.innerText == "="){
                 conteudo = "0";
             }
             // evitar que o número tenha mais de um ponto
-            if(!conteudo.includes(".")){
+            for (operador of "+-x/"){
+                ultimoOperador = Math.max(ultimoOperador, conteudo.lastIndexOf(operador));
+            }
+            // se há um ponto depois do último operador digitado, não pode haver outro
+            if(!conteudo.slice(ultimoOperador+1).includes(".")){
                 conteudo = conteudo.concat(entrada);
             }
             break;
