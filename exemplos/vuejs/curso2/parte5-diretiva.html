@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!--- colocar só os dois pontos é o mesmo que v-bind --->
+    <div id="app">
+        <img 
+        :src="endereco"
+        v-bind:title="titulo">
+        <hr>
+        <a v-bind:href="link">google</a>
+        <p v-text="paragrafo"></p>
+        <hr>
+        <div v-html="paragrafo">
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                    endereco: 'otter.jpg',
+                    titulo: 'Lontra',
+                    link: 'http://google.com/',
+                    paragrafo: '<b>texto</b> <br> qualquer'
+                }
+        })
+    </script>
+
+    
+</body>
+</html>

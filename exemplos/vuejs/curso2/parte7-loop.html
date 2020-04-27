@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!--- colocar só os dois pontos é o mesmo que v-bind --->
+    <div id="app">
+        <!---div v-for="i in imagens">
+            <img :src="i" width="100px"/>
+        </div>--->
+
+        <!---<p v-for="(fruta, index) in frutas">
+            {{ index }} - {{ fruta.nome }} / {{ fruta.cor }}
+        </p>--->
+
+        <ul>
+            <li v-for="(value, key, index) in usuario">
+                {{index}} - <b>{{key}}</b>: {{value}}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                    imagens: [
+                        "otter.jpg",
+                        "otter2.jpg",
+                        "otter3.jpg"
+                    ],
+                    usuario:{
+                        nome: "Luis",
+                        telefone: "91234-5678",
+                        email: "podepa@mlk.top",
+                        sobrenome: "Peres"
+                    },
+                    frutas: [
+                        {nome: 'Pera', cor: 'verde'}, 
+                        {nome: 'Uva', cor: 'roxo'}, 
+                        {nome: 'Morango', cor: 'vermelho'}
+                    ]
+                }
+        })
+    </script>
+
+    
+</body>
+</html>

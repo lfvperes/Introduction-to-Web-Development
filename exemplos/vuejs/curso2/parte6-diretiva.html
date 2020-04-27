@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!--- colocar só os dois pontos é o mesmo que v-bind --->
+    <div id="app">
+        <input type="text" v-model="textoDigitado">
+        <br/>
+        {{textoDigitado}}
+        <br/>
+        <div v-if="textoDigitado == 1">
+            <img :src="endereco1" :title="titulo" width="100px"/>
+        </div>
+        <div v-else-if="textoDigitado == 2">
+            <img :src="endereco2" :title="titulo" width="100px"/>
+        </div>
+        <div v-else-if="textoDigitado == 3">
+            <img :src="endereco3" :title="titulo" width="100px"/>
+        </div>
+
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                    textoDigitado: '',
+                    endereco1: 'otter.jpg',
+                    endereco2: 'otter2.jpg',
+                    endereco3: 'otter3.jpg',
+                    titulo: 'Lontra'
+                }
+        })
+    </script>
+
+    
+</body>
+</html>

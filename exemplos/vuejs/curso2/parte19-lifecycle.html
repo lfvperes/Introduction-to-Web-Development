@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Components
+    </title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      </div>
+
+    <script>
+        Vue.component('painel',{
+            data() {
+                return {
+                    titulo: 'Painel notícias'
+                }
+            },
+            methods: {
+                alerteAlgo(){
+                    this.titulo = "alertar de algo"
+                }
+            },
+            template: `
+            <div>
+                <h1>{{titulo}}</h1>
+                <button @click="alerteAlgo()">Alert</button>
+            </div>
+            `
+        });
+
+        const app = new Vue({
+            el: "#app",
+            data: {
+                nome: 1
+            },
+            methods: {
+                atualizaQualquerCoisa(){
+                    this.nome += 1;
+                },
+                destruir(){
+                    this.$destroy();
+                }
+            },
+            template: `<div>
+                <painel></painel>
+                <br/>
+                {{nome}}
+                <button @click="atualizaQualquerCoisa()">Atualizar</button>
+                <br/>
+                <button @click="destruir()">Destruir</button>
+            </div>
+            `,
+            beforeCreate(){
+                console.log("Antes de criar tudo");
+            },
+            created(){
+                console.log("Quando já foi criado");
+            },
+            beforeMount(){
+                console.log("Antes de montar tudo");
+            },
+            mounted(){
+                console.log("Tudo montado");
+            },
+            beforeUpdate(){
+                console.log("O valor é: " + this.nome);
+            },
+            updated(){
+                console.log("Depois de atualizar é: " + this.nome);
+            },
+            beforeDestroy(){
+                console.log("Antes de destuir");
+            },
+            destroyed(){
+                console.log("Destruído");
+            }
+        });
+    </script>
+  </body>
+</html>

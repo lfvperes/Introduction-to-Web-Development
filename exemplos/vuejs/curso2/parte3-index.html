@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+
+    <div id="app">
+        <p>{{msg}}</p>
+        <p>{{ podePa ? 'boa mlk' : 'nao fi'}}</p>
+        <p>{{frutas[0] + ' e '+ frutas[1]}}</p>
+        <p>Aluno(a): {{aluno.nome}}</p>
+        <p>{{1+num1}}</p>
+        <p>{{funcao()}}</p>
+        <p>{{funcao2()}}</p>
+        <p>{{metodo(1)}}</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                msg: 'Teste de mensagem',           // string
+                podePa: true,                       // boolean
+                frutas: ['Pera', 'Uva', 'Morango'], // array
+                aluno: {nome: 'Paula'},             // object
+                num1: 1,                            // number
+                funcao: function(){                 // function
+                    return 'top de top fi'
+                }, // não é uma boa prática colocar função dentro de data
+                funcao2: () => {                   // arrow function
+                    return 'chique'
+                    }
+                },
+            methods: {
+                metodo(indice){
+                    return 'Fruta: ' + this.frutas[indice]
+                }
+            }
+        })
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!--- colocar só os dois pontos é o mesmo que v-bind --->
+    <div id="app">
+
+            <input type="text" v-model="texto"
+            v-on:keyup.enter="alterarNome()"/>
+
+            <ul>
+                <li v-for="item in array"
+                style="background: white;"
+                @click="alerta($event)">
+                    {{item}}
+                </li>
+            </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                    texto:"",
+                    array: []
+                },
+                methods: {
+                    alterarNome(){
+                        this.array.push(this.texto);
+                        this.texto = "";
+                    },
+                    alerta(event){
+                        elemento = event.target;
+                        if (elemento.style.background == 'white'){
+                            elemento.style = "background: red";
+                        }else{
+                            elemento.style = 'background: white';
+                        }
+                        
+                    }
+                }
+        })
+    </script>
+
+    
+</body>
+</html>

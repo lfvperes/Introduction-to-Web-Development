@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>mount</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <button onclick="carregar()">
+        CHAMAR MUDANÇA
+      </button>
+    <div id="app">
+      
+    </div>
+
+    <script>
+        function carregar(){
+            app.$mount("#app")
+        }
+        const app = new Vue({
+            data: {
+            nome: `olá mundo`
+            },
+            template: "<h1>{{nome}}</h1>"
+        });
+    </script>
+  </body>
+</html>

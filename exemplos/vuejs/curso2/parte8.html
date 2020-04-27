@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<!--- colocar só os dois pontos é o mesmo que v-bind --->
+    <div id="app">
+       <input type="text" v-model="texto">
+       <br/>
+       <button v-on:click="alterarNome()">
+           Chamar Altera Nome
+       </button>
+       <button @click="alterarNome()">
+            Chamar Altera Nome de novo
+        </button>
+       <br/>
+       <label v-text="texto"></label>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                    texto:""
+                },
+                methods: {
+                    alterarNome(){
+                        this.texto = "Andrade";
+                    }
+                }
+        })
+    </script>
+
+    
+</body>
+</html>
