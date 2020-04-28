@@ -1,0 +1,43 @@
+<!---
+SCC0219 - Exercise 5, part 4
+Nome: LUIS FILIPE VASCONCELOS PERES
+NroUSP: 10310641
+--->
+<!---
+Alteracoes no html:
+- diretivas do Vue.js;
+- fehcar chave <li> aberta (linha 36);
+- conteúdo dentro de <li></li>;
+- estilo e script.
+--->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Search</title>
+    
+    <link rel="stylesheet" type="text/css" href="parte4.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app" class="container-fluid">
+      <h1>Vue.js Search</h1>
+
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search term"
+        v-model="procurado"
+        v-on:keyup="procurar()"
+        />
+      </div>
+
+      <div class="result-container">
+        <h2>Results<span></span></h2>
+        <ul class="list-group">
+          <li class="list-group-item" v-for="heroi in resultado">{{heroi}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="parte4.js"></script>
+  </body>
+</html>

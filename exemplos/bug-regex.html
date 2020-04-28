@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue.js Search</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app" class="container-fluid">
+      <h1>Vue.js Search</h1>
+    </div>
+
+    <script>
+        const app = new Vue({
+    el: "#app",
+    data: {
+        procurado: "",
+        resultado: [],
+        herois: [
+            {nome: "Mulher Maravilha"},
+            {nome: "Brainiac"},
+            {nome: "Aquaman"},
+            {nome: "Ravena"},
+            {nome: "Batman"},
+            {nome: "Superman"},
+            {nome: "Mulher Gavião"},
+            {nome: "Flash"},
+            {nome: "Lanterna Verde"},
+            {nome: "Shazam"}
+        ]
+    },
+    methods: {
+        procurar(){
+            this.resultado = [];
+            let procuradoReg = new RegExp(this.procurado, "gi");
+            for (h in this.herois){
+                if (procuradoReg.test(this.herois[h].nome)){
+                    this.resultado.push(this.herois[h].nome);
+                }
+                console.log(this.herois[h].nome);
+            }
+            console.log(this.procurado, procuradoReg, this.resultado);
+        }
+    }
+});
+    </script>
+  </body>
+</html>

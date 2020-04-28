@@ -1,0 +1,63 @@
+/*
+SCC0219 - Exercise 5, part 4
+Nome: LUIS FILIPE VASCONCELOS PERES
+NroUSP: 10310641
+*/
+@font-face {
+    font-family: Gotham;
+    src: url(GothamMedium.woff);
+}
+
+@font-face {
+    font-family: Gotham;
+    src: url(GothamBold.woff);
+    font-weight: bold;
+}
+
+body{
+    font-family: 'Gotham', sans-serif;
+    text-align: center;
+}
+
+div.container-fluid{
+    width: 440px;
+    height: 500px;
+    padding: 50px 80px;
+    border-radius: 50px;
+    color: white;
+    background-color: #0476F2;
+    display: inline-block;
+}
+
+div.form-group, div.result-container {
+    width: 240px;
+    padding: 10px;
+    border-radius: 16px;
+    border: 1px solid white;
+    display: inline-block;
+}
+
+div.result-container {
+    margin-top: 30px;
+    padding-top: 0 10px;
+    height: 340px;
+}
+
+input {
+    width: 160px;
+    background-color: white;
+    color: #0476F2;
+    border-style: none;
+    border-radius: 5px;
+    font-family: 'Gotham', sans-serif;
+}
+
+ul {
+    list-style-type: none;
+    font-size: large;
+    padding: 0;
+}
+
+li {
+    margin: 5px;
+}
