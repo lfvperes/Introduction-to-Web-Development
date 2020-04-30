@@ -5,12 +5,12 @@ NroUSP: 10310641
 */
 @font-face {
     font-family: Gotham;
-    src: url(GothamMedium.woff);
+    src: url('../fonts/GothamMedium.woff') format('woff');
 }
 
 @font-face {
     font-family: Gotham;
-    src: url(GothamBold.woff);
+    src: url('../fonts/GothamBold.woff') format('woff');
     font-weight: bold;
 }
 

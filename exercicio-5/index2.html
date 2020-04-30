@@ -3,12 +3,17 @@ SCC0219 - Exercise 5, part 5
 Nome: LUIS FILIPE VASCONCELOS PERES
 NroUSP: 10310641
 --->
+<!---
+Alterações no HTML:
+- diretivas do Vue.js;
+- estilo e script.
+--->
 <!DOCTYPE html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
     <title>Vue.js Form</title>
-    <link rel="stylesheet" href="parte5.css">
+    <link rel="stylesheet" href="css/parte5.css">
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 	</head>
 	<body>
@@ -18,19 +23,24 @@ NroUSP: 10310641
         <div class="form-container" >
           <div class="form-row">
             <div class="form-group col-6">
-              <input type="text" class="form-control" placeholder="Primeiro Nome">
+              <input type="text" class="form-control" placeholder="Primeiro Nome"
+              v-bind:class="{invalido: erro[0].invalido}">
             </div>
             <div class="form-group col-6">
-              <input type="text" class="form-control" placeholder="Sobrenome">
+              <input type="text" class="form-control" placeholder="Sobrenome"
+              v-bind:class="{invalido: erro[1].invalido}">
             </div>
             <div class="form-group col-12">
-              <input type="text" class="form-control" placeholder="Data de Nascimento" >
+              <input type="text" class="form-control" placeholder="Data de Nascimento" 
+              v-bind:class="{invalido: erro[2].invalido}">
             </div>
             <div class="form-group col-md-6">
-              <input type="text" class="form-control" placeholder="Cidade">
+              <input type="text" class="form-control" placeholder="Cidade"
+              v-bind:class="{invalido: erro[3].invalido}">
             </div>
             <div class="form-group col-md-4">
-              <select id="state" class="form-control">
+              <select id="state" class="form-control"
+              v-bind:class="{invalido: erro[4].invalido}">
                 <option selected>Signo</option>
                 <option>Áries</option>
                 <option>Leão</option>
@@ -46,7 +56,7 @@ NroUSP: 10310641
         </div>
       
     </div>
-      <script src="parte5.js"></script>
+      <script src="js/parte5.js"></script>
 
 	</body>
 </html>
